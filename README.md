@@ -1,5 +1,7 @@
 # SAM.gov US Federal Contracts & Grants Scraper (Keyless + MCP Server)
 
+[![Mr-Wolf-Dev/us-sam-tenders-mcp-server MCP server](https://glama.ai/mcp/servers/Mr-Wolf-Dev/us-sam-tenders-mcp-server/badges/score.svg)](https://glama.ai/mcp/servers/Mr-Wolf-Dev/us-sam-tenders-mcp-server)
+
 Extract, filter, and normalize **active US federal contract opportunities**, **government RFPs**, **solicitations**, **NAICS codes**, and **contracting officer contacts** directly from **SAM.gov** — **with zero API key required**, available both as an **HTTP-only Apify Actor** and as a **Standby MCP Server** for AI agents.
 
 Designed for **Pay-Per-Event (PPE)** cost efficiency with **zero headless browsers** (runs smoothly on **256 MB RAM**).
