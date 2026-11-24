@@ -1,0 +1,62 @@
+{
+  "title": "SAM.gov US Federal Contracts & Grants + MCP Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "query": {
+      "title": "Search Query",
+      "type": "string",
+      "description": "Keyword or phrase to search in SAM.gov opportunities (e.g. software, cybersecurity, cloud).",
+      "editor": "textfield",
+      "prefill": "software",
+      "default": ""
+    },
+    "noticeTypes": {
+      "title": "Notice Types",
+      "type": "array",
+      "description": "Filter by notice type codes (o=Solicitation, p=Presolicitation, k=Combined Synopsis, r=Sources Sought, a=Award Notice) or names.",
+      "editor": "stringList",
+      "default": []
+    },
+    "departments": {
+      "title": "Departments / Agencies",
+      "type": "array",
+      "description": "Filter by federal department or agency substrings (e.g. DEFENSE, HOMELAND, NASA).",
+      "editor": "stringList",
+      "default": []
+    },
+    "activeOnly": {
+      "title": "Active Opportunities Only",
+      "type": "boolean",
+      "description": "Only return active, non-canceled opportunities.",
+      "default": true
+    },
+    "publishedFrom": {
+      "title": "Published From (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Only include opportunities published on or after this date (YYYY-MM-DD).",
+      "editor": "textfield"
+    },
+    "minDeadline": {
+      "title": "Minimum Response Deadline (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Only include opportunities with response deadline on or after this date (YYYY-MM-DD).",
+      "editor": "textfield"
+    },
+    "includeDetails": {
+      "title": "Include NAICS & Contracting Officer Contacts",
+      "type": "boolean",
+      "description": "Fetch detail endpoint for each opportunity to include NAICS codes and contracting officer email/phone.",
+      "default": false
+    },
+    "maxItems": {
+      "title": "Maximum Items",
+      "type": "integer",
+      "description": "Maximum number of normalized opportunities to return (1–1000).",
+      "minimum": 1,
+      "maximum": 1000,
+      "prefill": 25,
+      "default": 50
+    }
+  }
+}

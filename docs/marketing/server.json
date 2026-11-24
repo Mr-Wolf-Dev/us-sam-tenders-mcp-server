@@ -1,0 +1,28 @@
+{
+  "name": "us-sam-tenders-mcp-server",
+  "displayName": "SAM.gov US Federal Contracts & Grants Scraper (Keyless)",
+  "version": "0.1.0",
+  "vendor": "mrWolf",
+  "description": "Keyless Streamable HTTP MCP server & Apify Actor for searching active US federal contract opportunities, RFPs, agencies, NAICS codes, and contracting officer contacts from SAM.gov.",
+  "homepage": "https://apify.com/mr.wolf/us-sam-tenders-mcp-server",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://mr-wolf-1--us-sam-tenders-mcp-server.apify.actor/mcp",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "prefix": "Bearer "
+    }
+  },
+  "tools": [
+    {
+      "name": "search_us_contracts",
+      "description": "Search active US federal contract opportunities, RFPs, and solicitations on SAM.gov without an API key."
+    },
+    {
+      "name": "get_opportunity_details",
+      "description": "Fetch full details for a specific SAM.gov opportunity ID, including NAICS codes and contracting officer contact info."
+    }
+  ],
+  "categories": ["business", "government-data", "lead-generation", "search"]
+}

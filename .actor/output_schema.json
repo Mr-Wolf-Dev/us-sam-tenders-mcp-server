@@ -1,0 +1,20 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "SAM.gov US Federal Contracts & Grants Output",
+  "description": "Normalized US federal contract opportunities extracted from SAM.gov.",
+  "type": "object",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Opportunities Overview",
+      "description": "Table view of normalized SAM.gov opportunities.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "dataset": {
+      "type": "string",
+      "title": "Full Opportunities Dataset (JSON)",
+      "description": "Complete JSON dataset of normalized SAM.gov opportunities.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

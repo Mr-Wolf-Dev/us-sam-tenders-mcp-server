@@ -1,0 +1,58 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "opportunityId": { "type": "string", "description": "SAM.gov 32-char opportunity ID." },
+      "solicitationNumber": { "type": ["string", "null"], "description": "Solicitation / RFP number." },
+      "title": { "type": "string", "description": "Opportunity title." },
+      "noticeTypeCode": { "type": ["string", "null"], "description": "SAM.gov notice type code (o, p, k, r, a)." },
+      "noticeType": { "type": ["string", "null"], "description": "Human-readable notice type." },
+      "department": { "type": ["string", "null"], "description": "Federal department (Level 1)." },
+      "agency": { "type": ["string", "null"], "description": "Federal agency (Level 2)." },
+      "office": { "type": ["string", "null"], "description": "Contracting office." },
+      "isActive": { "type": "boolean", "description": "Whether the opportunity is active." },
+      "isCanceled": { "type": "boolean", "description": "Whether the opportunity is canceled." },
+      "publishedDate": { "type": ["string", "null"], "description": "Publication date (YYYY-MM-DD)." },
+      "modifiedDate": { "type": ["string", "null"], "description": "Last modified date (YYYY-MM-DD)." },
+      "responseDeadline": { "type": ["string", "null"], "description": "Response deadline (YYYY-MM-DD)." },
+      "naicsCodes": { "type": "array", "items": { "type": "string" }, "description": "NAICS industry codes." },
+      "classificationCode": { "type": ["string", "null"], "description": "PSC / classification code." },
+      "pointOfContact": { "type": "array", "description": "Contracting officer contacts (name, email, phone)." },
+      "description": { "type": ["string", "null"], "description": "Cleaned notice description." },
+      "samUrl": { "type": "string", "description": "Canonical SAM.gov opportunity URL." }
+    },
+    "required": ["opportunityId", "title", "isActive", "isCanceled", "naicsCodes", "pointOfContact", "samUrl"]
+  },
+  "views": {
+    "overview": {
+      "title": "SAM.gov Opportunities Overview",
+      "transformation": {
+        "fields": [
+          "solicitationNumber",
+          "title",
+          "noticeType",
+          "department",
+          "agency",
+          "publishedDate",
+          "responseDeadline",
+          "samUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "solicitationNumber": { "label": "Solicitation #", "format": "text" },
+          "title": { "label": "Title", "format": "text" },
+          "noticeType": { "label": "Type", "format": "text" },
+          "department": { "label": "Department", "format": "text" },
+          "agency": { "label": "Agency", "format": "text" },
+          "publishedDate": { "label": "Published", "format": "date" },
+          "responseDeadline": { "label": "Deadline", "format": "date" },
+          "samUrl": { "label": "SAM.gov URL", "format": "link" }
+        }
+      }
+    }
+  }
+}

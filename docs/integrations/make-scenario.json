@@ -1,0 +1,22 @@
+{
+  "name": "SAM.gov US Federal Contracts & Grants + MCP Sync",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/mr.wolf~us-sam-tenders-mcp-server/run-sync-get-dataset-items?token={{YOUR_APIFY_TOKEN}}",
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "data": "{\"query\":\"\",\"maxItems\":25}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "us-sam-tenders-mcp-server",
+  "title": "SAM.gov US Federal Contracts & Grants + MCP",
+  "description": "Keyless HTTP-only Apify Actor & Standby MCP Server extracting active US federal contract opportunities, RFPs, agencies, NAICS codes, and contracting officer contacts from SAM.gov.",
+  "version": "0.1",
+  "usesStandbyMode": true,
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

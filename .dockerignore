@@ -1,0 +1,10 @@
+node_modules/
+dist/
+storage/
+apify_storage/
+.git/
+tests/
+docs/
+*.md
+.mcp.json
+.env*
