@@ -29,6 +29,20 @@ export function createMcpHttpServer(options: McpHttpServerOptions): Server {
       return;
     }
 
+    if (
+      req.method === 'GET' &&
+      (pathname === '/mcp/.well-known/glama.json' || pathname === '/.well-known/glama.json')
+    ) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(
+        JSON.stringify({
+          $schema: 'https://glama.ai/mcp/schemas/connector.json',
+          claim: process.env.GLAMA_CLAIM_TOKEN ?? 'glama_claim_NiaA3-wx54lP5B6TXgL2kaH9fyQquIKv',
+        }),
+      );
+      return;
+    }
+
     if (pathname === '/mcp') {
       if (req.method !== 'POST') {
         res.writeHead(405, { 'Content-Type': 'application/json' });
