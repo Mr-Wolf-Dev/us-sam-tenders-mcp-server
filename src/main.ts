@@ -1,6 +1,6 @@
 import { pathToFileURL } from 'node:url';
 import { runActorBatch, type SamBillingEvent } from './adapters/apify-actor.js';
-import { createSamMcpHttpServer } from './adapters/mcp-server.js';
+import { createConfiguredMcpServer, createSamMcpHttpServer } from './adapters/mcp-server.js';
 import { SamHttpClient } from './adapters/sam-http-client.js';
 import { runDualModeActor } from './shared/actor-runner.js';
 import { createApifyBillingMeter } from './shared/billing-meter.js';
@@ -12,6 +12,7 @@ export async function main(): Promise<void> {
   await runDualModeActor({
     runBatch: () => runActorBatch(source, billing),
     createMcpServer: () => createSamMcpHttpServer({ source, billing }),
+    createStdioMcpServer: () => createConfiguredMcpServer({ source, billing }),
   });
 }
 

@@ -13,7 +13,7 @@ export interface McpServerDependencies {
   billing: BillingMeter<SamBillingEvent>;
 }
 
-function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
+export function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
   const server = new McpServer({
     name: 'us-sam-tenders-mcp-server',
     version: '0.1.0',
